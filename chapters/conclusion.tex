@@ -1,0 +1,118 @@
+
+\documentclass[../Thesis.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Conclusion}\label{chapter:Conclusion}
+    The direct observation of gravitational waves from the binary neutron star inspiral of GW170817 and coincident detections from GRB 170817A and AT2017gfo launched the nascent field of multi-messenger gravitational-wave astronomy.
+    Gravitational waves from the late inspiral and post-merger remnant of GW170817 were not detected because the gravitational-wave detectors lacked sensitivity in high frequencies.
+    High frequency gravitational-wave detectors have been proposed  which may allow gravitational-wave observations of the binary neutron star post-merger remnant and late inspiral in the near-future. \par
+    
+    Observations of gravitational waves from the late inspiral will inform the equation of state for cold neutron stars, whereas gravitational wave detections from surviving post-merger remnants will inform the extremely dense, hot equation of state.
+    Surviving post-merger remnants are binary neutron star remnants that have not yet collapsed to a black hole.
+    We need models of the post-merger gravitational-wave strain to enable observations of gravitational waves from post-merger remnants.
+    Numerical-relativity simulations are the best basis for these post-merger models. \par
+    
+    We should not expect that future observable post-merger gravitational waves will precisely match numerical-relativity simulations, as the simulations are extremely complex.
+    Compromises must be made in spatial-resolution, incorporated physics, and convergence testing, for simulations to complete in practical time-frames.
+    The absolute accuracy of the phase evolution and the collapse time of the post-merger remnant are uncertain due to these compromises.\par
+    
+    With these computational limitations in mind, we need simple models that can be used for gravitational-wave detection and parameter estimation.
+    The main purpose of this thesis was to focus on this task.
+    We achieve this goal by developing a hierarchical model that can infer the progenitor neutron star system parameters and generate gravitational-wave spectra.
+    We develop a simple analytical frequency-drift model which successfully matches the numerical-relativity gravitational-wave strain. 
+    We modify the frequency-drift model to allow for collapsing remnants so that we can measure when the post-merger remnant collapses to a black hole.
+    
+    In Chapter~\ref{chapter:ComputingFastReliable}, we train our hierarchical model on 35 numerical-relativity simulations and measure leave-one-out cross-validated fitting-factors with a mean of 0.95. 
+    We show that we can generate gravitational-wave spectra in a fraction of a second, given only the neutron star mass, $M$, and the tidal coupling constant, $\kappa_2^T$.
+    We perform parameter estimation on $\kappa_2^T$ by using the fitting factor as a proxy for the likelihood.
+    The hierarchical model is particularly suited to modelling numerical-relativity simulations as it is insensitive to phase uncertainties that can occur between simulations with adjacent spatial resolutions.
+
+    
+    In Chapter~\ref{chapter:DetectionPE},  we implement a third-order exponentially-damped sinusoid with a frequency-drift term to successfully capture the complex gravitational-wave strain from simulations of post-merger remnants.
+    We find that we can achieve noise-weighted fitting-factors of $\gtrsim 0.92$, with most fitting factors of $\sim 0.95 - 0.97$.
+    We use a detection threshold with a Bayes factor of $\sim 3000$ and find that a post-merger signal-to-noise ratio of $\gtrsim 7$ is needed to detect the post-merger remnant.
+    We also find that the sensitivity to the uncertainty in the coalescence time is negligible for any detectable post-merger remnant.
+    We calculate the dominant post-merger oscillation frequency, $\fpeak$, from the model and constrain this at 95\% credible intervals to $\sim 1.5\%$ for a post-merger signal-to-noise ratio of 15, and $\sim 0.3\%$ for a post-merger signal-to-noise ratio of 50. 
+    We then use the hierarchical model trained in Chapter~\ref{chapter:ComputingFastReliable} to infer the equation of state parameters $\kappa_2^T$ and $C$.
+    At 95\% confidence intervals, we constrain $\kappa_2^T$ to $\sim 12\%$ for a post-merger signal-to-noise ratio of 15, and $\sim 5\%$ for a post-merger signal-to-noise ratio of 50.
+    Similarly, we constrain $C$ to $\sim 5\%$ for a signal-to-noise ratio of 15, and $\sim 2\%$ for a post-merger signal-to-noise ratio of 50.
+    % However, the numerical-relativity simulation under test uses a different numerical code to the simulations in which we train the model.
+    % This results in a slight bias between the true $\kappa_2^T$ value and the recovered posteriors and a larger bias in the posteriors for $C$ that can be accounted for in future work by propagating uncertainties in the power-law model.
+
+    In Chapter~\ref{chapter:CollapseTime},   we add a collapse-time function to our frequency-drift model and measure at what distance the collapse time can be measured.
+    We find that we need a combination of Einstein Telescope and Cosmic Explorer interferometers to detect a collapse time of $10\,\ms$ at a GW170817-like distance of $\sim 40\,\Mpc$.
+    For a network of 2 A+ detectors, a distance of $\sim\,10\Mpc$ is required to detect a $10\,\ms$ collapse time.
+    If the high-frequency NEMO detector is added to the 2 A+ network then this detection distance is increased to $\sim 25\,\Mpc$. \par
+    
+    These three models address the requirements for future post-merger gravitational-wave detections.
+    The post-merger models consistently achieve $\gtrsim 0.90$ fitting factors, making them suitable for matched-filter detection of gravitational-wave signals.
+    However, a number of enhancements can be anticipated for future work. \par
+    
+    An obvious model enhancement would allow for unequal-mass binaries.
+    In this case, the number of available numerical-relativity simulations are significantly reduced.
+    This does not exclude training a modified hierarchical model on the unequal-mass simulations, though careful attention should be  paid to the error propagation to count for the reduced number of simulations in this part of the training set.
+    The frequency-drift model, with or without the collapse time extension, has yet to be tested with unequal-mass mergers.
+    This could be tested and the model updated if required. \par
+    
+    Measurements of larger collapse times are limited by waveform systematics in the late post-merger gravitational-wave strain.
+    The same waveform systematics are also present in the model used in Chapter~\ref{chapter:DetectionPE} for post-merger signals of length $\gtrsim 15\,\ms$.
+    A couple of assumptions can be reassessed for future work on the frequency-drift model to help reduce these systematics. 
+    The first is that the linear frequency-drift term may be too restrictive for longer signals and other analytic or semi-analytic methods could be considered.
+    Secondly, the assumption of exponential damping could be reassessed, considering, for example, a power-law decay in the amplitude instead.
+    \par
+
+    The lifetimes of post-merger remnants are highly uncertain with gravitational-wave timescales ranging from $0.15-12\,\s$ for a range of ellipticities and equations of state (Eq.~\ref{eq:Intro:GWAngularMomentumLoss}).
+    If the above waveform systematics are successfully addressed then detection and parameter estimation studies could be performed with much longer collapse times. 
+    A successful injection study for collapse times up to $\sim 2\,\s$ may allow the measurement of collapse times for future GW170817-like events.
+    This would have significantly aided model selection for the gamma-ray physics associated with GRB 170817A.\par
+
+    For example, measuring any collapse of the post-merger remnant would rule out proposals that rely on surviving neutron star remnants~\cite[e.g.,][]{Yu2018}.
+    Measuring a collapse time  of $\lesssim 0.5\,\s$ would reduce support for scenarios in Refs.~\cite{Gill2019,Murguia-Berthier2021} where collapse
+    times of at least $\sim 1\,\s$ are required so that jets are launched after black hole formation. 
+    % \par
+    % The delay time between the short gamma-ray burst after the inferred merger time for GW17081 is, $\sim 1.7\,\s$.
+    % The similarity between this delay time and the observed burst duration for GRB 170817A, $\sim~2\,\s$ informed a model of GRB 170817A where the majority of the delay time was caused by the propagation of the GRB~\cite{Zhang2018}.
+    % This model is indifferent to the form of the central engine other than the requirement that the jet is launched and breakout occurs $\lesssim 0.5\,\s$. 
+    A small collapse time of $\lesssim 0.05\,\s$ will rule out models that rely on the temporary survival of the post-merger remnant to account for the colour of kilonova emission~\cite{Metzger2018}.
+    This highlights a few examples of how the collapse times may influence the physics of short gamma-ray bursts.\par
+
+    The models developed in this thesis could be used to develop detection pipelines for post-merger remnants.
+    Pipelines already exist that are capable of searching for post-merger remnants: \texttt{cWB}, \texttt{BayesWave}, \texttt{Viterbi}, \texttt{STAMP}, \texttt{ATrHough}, and  \texttt{FreqHough}~\cite{Thrane2011, Cornish2015,Littenberg2015,Viterbi1967,Klimenko2016, Suvorova2016,GW170817Postmerger1,Chatziioannou2017,Miller2018, Torres-Rivas2019, Oliver2019,GW170817Postmerger2}.
+    A number of these tools searched for a long-lived post-merger remnant from the GW170817 merger, with searches lasting $\lesssim 500\,\s$ (\texttt{STAMP}, \texttt{cWB})~\cite{GW170817Postmerger1} and searches ranging from $\sim 2 - 24\,$hours (\texttt{Viterbi}, \texttt{STAMP}, \texttt{ATrHough}, and  \texttt{FreqHough})~\cite{GW170817Postmerger2}.
+    Searches were also performed over $\lesssim 1\,\s$ (\texttt{cWB})~\cite{GW170817Postmerger1} and \texttt{BayesWave} has characterised the post-merger remnant from binary neutron star mergers~\cite{Clark2016postmerger,Chatziioannou2017,Torres-Rivas2019,Easter2020}. \par
+
+    Pipelines developed from the analytical models in Chapters~\ref{chapter:DetectionPE}-\ref{chapter:CollapseTime} could be designed to work with signals produced from numerical-relativity simulations with lengths of $\lesssim 100\,\ms$, or long signals of $\lesssim 2\,\s$.
+    Pipelines that searched for the long-lived post-merger remnant should be used for signals longer than this.
+    We propose two pipelines from this work: a short pipeline with a length of $\lesssim 100\,\ms$ and a long pipeline with length  $\lesssim 2\,\s$. \par
+    
+    Pipelines that are of direct interest for comparison with the analytical model are \texttt{BayesWave} and  \texttt{cWB}.
+    We find in Chapter~\ref{chapter:DetectionPE} that \texttt{BayesWave} is more sensitive when measuring the dominant post-merger frequency, $\fpeak$.
+    \texttt{BayesWave} and the analytical model constrained $\fpeak$ to post-merger signal-to-noise ratios of $\gtrsim 9$, and $\gtrsim 15$, respectively. 
+    The \texttt{cWB} pipeline is expected to be the least sensitive as it detects unmodelled coherent excess power, assuming waveform systematics have been addressed in the analytical model. \par
+
+    The proposed pipeline would use Bayesian inference for detection and parameter estimation which will find posteriors directly related to the gravitational-wave strain of the post-merger remnant.
+    This is an advantage over both \texttt{BayesWave} and \texttt{cWB}. 
+    The Bayes factor would serve as a robust detection statistic in this situation due to the loud inspiral signal and the tight constraint expected on the coalescence time.
+    It may be necessary to perform computational optimisation to allow the long pipeline to execute in reasonable time frames, though it may be possible to use parallel Bilby~\cite{Smith2020} to speed up this pipeline. \par
+    
+    The hierarchical model can only be used on the short pipeline because it is trained on numerical-relativity simulations.
+    It is likely that the model will need to be extended to account for both spins and unequal-mass neutron stars, this will need to be assessed.
+    The hierarchical model can be trained on as many numerical-relativity simulations as possible with careful consideration taken in selecting the spatial resolution.
+    The hierarchical model would then be available to infer equation of state parameters from the posterior waveforms generated from the analytical pipeline.
+\par
+    Although we are not expecting binary neutron star post-merger detections in the immediate future, they may be possible if proposed high-frequency gravitational-wave detectors like NEMO are constructed, or failing that, when Einstein telescope and Cosmic Explorer detectors are operational.
+    With this in mind, we must ensure that we have the tools available to fully utilise any future binary neutron star post-merger detections so that we can probe the extreme physics of these remnants.
+
+    \par
+    
+
+
+
+    
+
+    
+
+
+
+\end{document}

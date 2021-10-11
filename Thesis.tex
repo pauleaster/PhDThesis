@@ -1,0 +1,196 @@
+
+\documentclass[oneside, 12pt]{book}
+
+\usepackage[font=small]{caption}
+\usepackage{subfiles}
+\usepackage{amsmath,slashed}
+% \usepackage[left]{lineno}
+\usepackage{units}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+% \usepackage{support-caption}
+% \usepackage[font=small]{subcaption}
+\usepackage{bm}
+\usepackage[shortlabels]{enumitem}
+\usepackage{float}
+\usepackage{soul}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[all]{nowidow}
+\usepackage{rotating}
+\usepackage{fnbreak}
+
+\pagestyle{fancy}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Commands for numerical references
+\usepackage[numbers,sort&compress]{natbib} % Sorted numbers
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Commands for author year references
+% \usepackage[round,semicolon]{natbib} % Named citations
+% \def\cite{\citep}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{wasysym}
+\usepackage{aas_macros}
+\graphicspath{{images/}}
+\RequirePackage{lineno}
+\usepackage[usenames,dvipsnames,table]{xcolor}
+\usepackage{appendix}
+\usepackage{extdash}
+\usepackage{colortbl}
+\usepackage{pdfpages}
+\usepackage{bibentry}
+\usepackage{doi}
+\usepackage{tabto}
+\usepackage[multiple]{footmisc}
+% \usepackage{setspace}
+% \onehalfspacing
+\usepackage{sectsty}
+
+\usepackage[a4paper]{geometry}
+\geometry{left=3.4cm}
+\geometry{right=3.4cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+\usepackage{tocbibind}
+\nobibliography*
+
+
+
+\makeatletter
+\AtBeginDocument{\let\LS@rot\@undefined}
+\makeatother
+
+\pagestyle{plain}
+
+
+
+\definecolor{lightblue}{HTML}{1F77B4}
+\newcommand{\SLyWaveform}[1]{\textcolor{lightblue}{#1}}
+\newcommand{\redtext}[1]{{\color{red}#1}}
+\newcommand{\bluetext}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\pdl}[1]{\textcolor{red}{[PDL: #1]}}
+\newcommand{\pje}[1]{\textcolor{Purple}{[PJE: #1]}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\SPA}{School of Physics and Astronomy, Monash University, Vic 3800, Australia}
+\newcommand{\OzGravMonash}{OzGrav: The ARC Centre of Excellence for Gravitational Wave Discovery, Clayton VIC 3800, Australia}
+
+\newcommand{\mtov}{\mathrm{M_{TOV}}}
+\newcommand{\Rtov}{\mathrm{R_{TOV}}}
+\newcommand{\msun}{\mathrm{M}_{\odot}}
+\newcommand{\km}{\mathrm{km}}
+\newcommand{\MeV}{\mathrm{MeV}}
+\newcommand{\kHz}{\mathrm{kHz}}
+\newcommand{\Hz}{\mathrm{Hz}}
+\newcommand{\fpeak}{f_{\mathrm{peak}}}
+\newcommand{\Mpc}{\mathrm{Mpc}}
+\newcommand{\ms}{\mathrm{ms}}
+\newcommand{\bTheta}{\boldsymbol{\Theta}}
+\newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\fspiral}{f_{\mathrm{spiral}}}
+\newcommand{\ftwopluszero}{f_{2+0}}
+\newcommand{\ftwominuszero}{f_{2-0}}
+\newcommand{\fmax}{f_{\mathrm{max}}}
+\newcommand{\ergps}{\mathrm{erg.s^{-1}}}
+\newcommand{\s}{\mathrm{s}}
+
+\newcommand{\tc}{t_{\mathrm{col}}}
+\newcommand{\tcu}{t_{\mathrm{col,+1\sigma}}}
+\newcommand{\tcl}{t_{\mathrm{col,-1\sigma}}}
+\newcommand{\tw}{t_{\mathrm{w}}}
+
+\captionsetup{belowskip=-8pt,aboveskip=0pt}
+% \titlespacing*{\section}
+% {0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+
+
+\definecolor{Waveform1}{HTML}{1f77b4}
+\definecolor{Waveform2}{HTML}{ff7f0e}
+\definecolor{Waveform3}{HTML}{2ca02c}
+\definecolor{Waveform4}{HTML}{d62728}
+\definecolor{Waveform5}{HTML}{9467bd}
+\definecolor{Waveform6}{HTML}{8c564b}
+\definecolor{Waveform7}{HTML}{e377c2}
+\definecolor{Waveform8}{HTML}{7f7f7f}
+\definecolor{Waveform9}{HTML}{bcbd22}
+
+
+
+\makeatletter
+\newcommand{\chapterauthor}[1]{%
+  {\parindent0pt\vspace*{-25pt}%
+  \linespread{1.1}\normalsize#1%   % \large\scshape -> \normalsize
+  \par\nobreak\vspace*{35pt}}
+  \@afterheading%
+}
+
+\newcommand\thefontsize{The current font size is: \f@size pt}
+
+\makeatother
+
+
+
+\begin{document}
+
+\includepdf{PEThesisFrontPage.pdf}
+% \chapternumberfont{\normalsize\selectfont}
+% \chaptertitlefont{\normalsize\selectfont}
+
+
+\chapternumberfont{\fontsize{20pt}{10pt}\selectfont}
+\chaptertitlefont{\fontsize{20pt}{25pt}\selectfont}
+% \raggedright
+
+% \title{Binary neutron star remnants: the most extreme matter in the universe}
+% \author{Paul J. Easter}
+
+\frontmatter
+
+% \maketitle
+
+\sloppy
+
+\subfile{chapters/copyright.tex}
+
+\subfile{chapters/publications.tex}
+
+\subfile{chapters/declaration.tex}
+
+\subfile{chapters/acknowledgements.tex}
+    
+
+\tableofcontents
+% \listoffigures
+% \listoftables
+
+\mainmatter
+
+\subfile{chapters/introduction.tex}
+
+\subfile{papers/paper1.tex}
+\subfile{papers/paper2.tex}
+\subfile{papers/paper3.tex}
+\subfile{chapters/conclusion.tex}
+
+
+% \bibliographystyle{unsrtnat}
+\bibliographystyle{ieeetr}
+
+% \bibliographystyle{apsrev4-1}
+
+
+
+\footnotesize
+\bibliography{FinalBib}
+
+
+\end{document}
