@@ -15,22 +15,7 @@
 \chapter*{Abstract}
 \endgroup
 \addcontentsline{toc}{chapter}{Abstract} 
-% Paper 1
-% Here we introduce a hierarchical model trained on numerical-relativity simulations, which can generate reliable post-merger spectra in a fraction of a second. Our spectra have mean fitting factors of 0.95, which compares to a fitting factor of 0.93 between different numerical-relativity codes that simulate the same physical system. This method is the first step towards generating large template banks of spectra for use in post-merger detection and parameter estimation.
-% Paper 2
-% Here we develop a fast, simple model that can generate gravitational waveforms, and show it can be used for both detection and parameter estimation of post-merger remnants.
-% The model consists of three exponentially-damped sinusoids with a linear frequency-drift term.
-% We test the model against nine equal-mass numerical-relativity simulations selected for emission of gravitational waves for $\gtrsim25$\,ms.
-% The median fitting factors between the model waveforms and numerical-relativity simulations exceed 0.90.
-% We detect remnants at a post-merger signal-to-noise ratio of $\ge 7$ using a Bayes-factor detection statistic with a threshold of 3000.
-% We can constrain the primary post-merger frequency to $\pm_{1.2}^{1.4}\%$ at post-merger signal-to-noise ratios of 15 with an increase in precision to $\pm_{0.2}^{0.3}\%$ for post-merger signal-to-noise ratios of 50.
-% The tidal coupling constant can be constrained to $\pm^{9}_{12}\%$ at post-merger signal-to-noise ratios of 15, and $\pm 5\%$ at post-merger signal-to-noise ratios of 50 using a hierarchical inference model.
-% Paper 3
-% We develop and test a method to measure the collapse time of post-merger remnants.
-% We show that for a GW170817-like event at $\sim\!40$\,Mpc, a network of Einstein Telescope with Cosmic Explorer is required to detect collapse times of $\sim\!10$\,ms.
-% For a two-detector network at A+ design sensitivity, post-merger remnants with collapse times of $\sim\!10\,\mathrm{ms}$ must be $\lesssim 10$\,Mpc to be measureable.
-% This increases to $\sim\!18\Hyphdash*26$\,Mpc if we include the proposed Neutron star Extreme Matter Observatory (NEMO), increasing the effective volume by a factor of $\sim\!30$.
-    % Surviving neutron star remnants from binary neutron star mergers are some of the most extreme forms of matter known in the Universe.
+
     Surviving remnants from binary neutron star mergers, remnants that have not yet collapsed to a black hole,  are some of the most extreme forms of matter known in the Universe.    
     The densities of surviving merger remnants are $\sim 10^{14}-10^{15}\,\mathrm{g\, cm^{-3}}$ which is up to several times nuclear density.
     The temperature of the post-merger remnant can reach values from tens to hundreds of $\mathrm{MeV}$.
@@ -66,11 +51,7 @@
 \chapter{Introduction} \label{chapter:Introduction}
 \endgroup 
 
-    
-    
-    
 
-% ***************************************************************************************************************************************************************
     \section{Gravitational waves} 
     In 2017, the LIGO and Virgo collaborations observed the first direct gravitational waves from a binary neutron star merger, GW170817~\cite{GW170817Detection}.
     This began the era of multi-messenger gravitational-wave observations with coincident detections in many parts of the electromagnetic spectrum~\cite{Goldstein2017,Coulter2017,Troja2017,Nicholl2017,Chornock2017,Margutti2017,Alexander2017,GW170817multi}. \par
@@ -86,17 +67,7 @@
     For simulation purposes, the movement of matter can be modelled by the Einstein field equations~Eq.(\ref{eq:Intro:GeqT}) and perturbations of black holes~\cite[e.g.,][]{Moncrief1974,Abrahams1996,Andrade1999,Nagar2005}.
     This methodology allows the calculation of multipole functions of odd ($\mathcal{Q}^\times_{lm}$) and even ($\mathcal{Q}^+_{lm}$) parity, with angular indices of $(l,m)$.
     These multipoles can be evaluated by numerical-relativity simulations which allow the extraction of gravitational waves.
-% \redtext{Movement of matter in space generates mass multipoles that can be related to perturbations of black holes.
-%     These perturbations can be described in terms of the non-rotating metric for black holes, the Schwarzschild metric, and the Einstein field equations,~Eq.~\ref{eq:Intro:GeqT}.
-%     Non-spherical gauge-invariant perturbations, outlined in Ref.~\cite{Baiotti2008}, can generate master multipole functions of odd ($\mathcal{Q}^\times_{lm}$) and even ($\mathcal{Q}^+_{lm}$) parity, with angular indices of $(l,m)$, that can be estimated my numerical-relativity simulations (see also Refs.~\cite{Moncrief1974,Abrahams1996,Andrade1999,Nagar2005}).}
-% \redtext{
-%     Gravitational waves can be extracted for a virtual observer on the 2-sphere of a Schwarzschild metric with an isotropic radius of $r$ from the source.
-%     The Schwarzschild radius for this metric is $r_S=r(1-M/2r)^2$, where $M$ is the enclosed mass~\cite[e.g.,][]{Baiotti2008}.
-%     Gravitational waves are extracted through non-spherical gauge-invariant perturbations of the Schwarzschild metric, resulting in multipoles  where $(l,m)$ are the angular indices~\cite{Moncrief1974,Abrahams1996,Andrade1999,Nagar2005,Baiotti2008}.\footnote{Please note that $\mathcal{Q}^+_{lm}$ and $\mathcal{Q}^\times_{lm}$ have different units, see Ref.~\cite{Nagar2005} for more information.}\par  % Matthews1962
-%     % Check out: Abrahams, Rezzolla, Rupright, Anderson, Anninos, Baumgarte, et al., Phys. Rev. Lett. 80, 1812 (1998) 
-%     % Rupright, Abrahams, Rezzolla, Phys. Rev. D 58, 044005 (1998).
-%     % Rezzolla, Abrahams, Matzner, Rupright, Shapiro, Phys. Rev. D 59, 064001 (1999).
-%     }
+
     The plus, $h_{+}$, and cross, $h_{\times}$, polarisations of the gravitational waves are related to the multipoles as follows~\cite{Moncrief1974,Abrahams1996,Andrade1999,Nagar2005,Baiotti2008}:\footnote{Please note that $\mathcal{Q}^+_{lm}$ and $\mathcal{Q}^\times_{lm}$ have different units, see Ref.~\cite{Nagar2005} for more information.}
      \begin{align}
         h_{+} - i h_{\times} & = \frac{1}{r\sqrt{2}}\sum_{l,m} {}_{-2}Y^{lm}\left(\mathcal{Q}^{+}_{lm} -i \int_{-\infty}^t\mathcal{Q}^\times_{lm}(t')dt'\right). \label{eq:Intro:MultipoleExpansion}
@@ -132,9 +103,7 @@
     Using Eqs.(\ref{eq:Intro:OrbitalEvolution}\Hyphdash*\ref{eq:Intro:FreqEvolution}), an expression for the frequency and the gravitational-wave strain magnitude can be calculated~~\cite[e.g.,][]{Cutler1994}: 
       \begin{align}
       f &  \propto \mathcal{M}^{- 5/8}(t_c-t)^{- 3/8},\label{eq:Intro:chirp_f}\\
-        % |h(t)| & \propto  \frac{\pi^{2/3}}{D}\left(\frac{576\mu^3 M^2}{5}\right)^{1/4}(t_c-t)^{-1/4}, \label{eq:Intro:chirp_ht_old} ,\\
         |h(t)| & \propto  \frac{\mathcal{M}^{5/4}}{D}(t_c-t)^{-1/4}, \label{eq:Intro:chirp_ht} 
-        % Calculated by Cutler1994 (2.12) + (2.11) + Chirp mass defn
     \end{align}
     where $t$ is the time, $t_c$ is the time until coalescence, and $D$ is the luminosity distance to the source. 
     The combination of Eq.(\ref{eq:Intro:chirp_f})~and~Eq.(\ref{eq:Intro:chirp_ht}) result in the chirp waveform detected in the inspiral of compact object mergers.
@@ -144,11 +113,10 @@
     The gravitational-wave strain is found by measuring the optical path difference between the perpendicular beam tubes. \par
     
     Another binary neutron star (possibly neutron star - black hole) merger, GW190425, was detected in 2019~\cite{GW190425Detection,GWTC2,PopGWTC2}.
-    %, along with another binary neutron star black hole binary with a high false alarm rate, GW190426\_152155.
+
     However, the luminosity distance of GW190425, $159^{+69}_{-72}\,$Mpc, and the broad sky localisation of the source, $8284\,\mathrm{deg}^2$, precluded any coincident electromagnetic observations~\cite{GW190425Detection}. In comparison, the sky localisation of GW170817 was $28\,\mathrm{deg}^2$ at a distance of $\sim 40\,\Mpc$.
     Therefore, to date, GW170817 is the only gravitational-wave signal that was observed with coincident electromagnetic radiation and will be discussed further in Section~\ref{sec:Intro:NeutronStarMergers}.
-    %, allowing the host galaxy to be located~\cite{GW170817multi}. 
-    
+
 
     
     
@@ -178,7 +146,7 @@
 
 
 
-% ***************************************************************************************************************************************************************
+
     \section{Neutron stars}
     \label{sec:Intro:NeutronStars}
     Neutron stars are compact stellar remnants that are formed following supernovae of stars with masses of $\gtrsim 8\,\mathrm{M}_\odot$~\cite[e.g.,][]{Lattimer2004}.
@@ -221,35 +189,14 @@
     The grey region is excluded by causality, where the speed of sound in the neutron star exceeds $c$.
     Given these constraints, the radius of neutron stars are $\gtrsim 10\,$km with $\mtov \gtrsim 2.2\, \msun$. 
     
-% \par
-    
-    % Another unique property of neutron stars is that they are opaque to neutrinos.
 
-
-
-
-
-
-
-% ***************************************************************************************************************************************************************
     \section{Neutron star mergers} \label{sec:Intro:NeutronStarMergers}
     Binary neutron star mergers emit vast amounts of energy in gravitational waves.
     The estimated radiated energy for the GW170817 merger was $\gtrsim 5\times 10^{52}\,$ergs~\cite{GW170817Detection}, equivalent to $\sim 1\%$ of the total rest mass of the two neutron stars.
     For a source at a distance of $D$ from the observer, the amplitude of gravitational waves are  $\propto 1/D$, whereas the amplitude of electromagnetic waves are $\propto 1/D^2$.
     Additionally, electromagnetic waves can be attenuated by intervening media between the source and the detector whereas gravitational waves are transparent to the intervening media.
     Hence gravitational waves are detectable over much larger distances in comparison to electromagnetic radiation with the same source luminosity. \par
-    % A sentence here about the lack of opacity to GW as opposed to EM?
     
-    
-    % If a BNS system of Rinit is less than tmerge is left undisturbed then the BNS can merge.
-    % Formation channels.
-    % If a binary neutron star system is formed with a separation less than the cr
-    % From GW170817multi:
-    % This motivated the development of accurate models for the two-body, general-relativistic dynamics (Blanchet et al. 1995;Buonanno & Damour 1999; Pretorius 2005; Baker et al. 2006; Campanelli et al. 2006; Blanchet 2014) that
-    
-    
-
-    % Damour2012 in terms of tidal coupling constant, $\kappa_2^T$
     Gravitational-wave strain emitted from the inspiral of binary neutron star mergers, approximated by Eqs.(\ref{eq:Intro:FreqEvolution}\Hyphdash*\ref{eq:Intro:chirp_ht}), can be recast in the frequency domain using the stationary phase approximation~\cite{Cutler1994}
     \begin{align}
         h_{22}(f) & \equiv \frac{\mathcal{A}}{D}\mathcal{M}^{5/6}f^{-7/6} \exp(i\Psi(f)), \label{eq:Intro:StationaryPhaseApproxH22} \\
@@ -260,9 +207,8 @@
     Equations~\ref{eq:Intro:StationaryPhaseApproxH22}\Hyphdash*\ref{eq:Intro:StationaryPhaseApproxPsi} are valid for $a \gtrsim 6M$ where $a$ is the orbital separation of the binary system and $a\sim 6M$ is an approximation of the innermost stable circular orbit~\cite{Cutler1994}.
     Solving Eqs.(\ref{eq:Intro:OrbitalEvolution}\Hyphdash*\ref{eq:Intro:FreqEvolution}) for $a \sim 6M$ gives $f_{max}\approx c^3 ( 6^{3/2}\pi G M )^{-1}\,\mathrm{Hz}$.
     \par
-    % The base post-Newtonian expansion parameter is $\sqrt{M/r}$ but it is more convenient to use $\left(\pi M f\right)^{1/3}$ as the post-Newtonian expansion parameter.
-    % These two parameters are equal up to and excluding terms of order $(M/r)^{3/2}$.
-    The validity for these equations can be extended to times closer to the merger by adding relativistic corrections calculated by post-Newtonian expansion and effective-one-body dynamics~\cite{Cutler1994,Blanchet1995, Buonanno1999,Droz1999,Damour2012,Yagi2013,Blanchet2014}. % to Eq.~\ref{eq:Intro:StationaryPhaseApproxPsi}
+   
+    The validity for these equations can be extended to times closer to the merger by adding relativistic corrections calculated by post-Newtonian expansion and effective-one-body dynamics~\cite{Cutler1994,Blanchet1995, Buonanno1999,Droz1999,Damour2012,Yagi2013,Blanchet2014}. 
     These corrections introduce dependence on the masses, spins, and tidal deformabilities of the individual neutron stars.
     This allows the measurement of these system properties in addition to the chirp mass, given a gravitational-wave inspiral detection.
     However, the accuracy of the individual neutron star properties is significantly less than the accuracy of the chirp mass because the relativistic corrections required to measure these properties are fairly weak. 
@@ -290,39 +236,6 @@
     Unfortunately, existing gravitational-wave detectors are not sensitive enough in the $\kHz$ range (see Fig.~\ref{fig:Intro:ASDs} and Sec.~\ref{sec:Intro:StrainAndSpectra}) and the collapse time is one of the most difficult parameters to predict with numerical-relativity simulations.
 
 
-
-
-    
-    % Metzger2018: Blue KN eject proposed cause: neutrino-irradiated, magnetically driver outflow from temporarily stable HMNS consistent with $\tc \sim 0.1-1\,\s$
-    % Gill2019: Assume jet powered by rotating BH with $M_{\mathrm{ej,blue}} \approx 0.025\,\msun$ then $\tc \sim 1\,\s$
-    % Murguia-Berthier2021: Assume jet powered by rotating BH: $\tc \approx1-1.7\,\s$
-    % Yu2018: long lived stable NS
-    
-    % From Zhang2019:
-    % There are two explanations for the total delay time of $\sim 1.7\,$s of GRB 170817A after the merger of GW170817~\cite{Zhang2019}.
-    % The first involves a fireball where the emission is most likely from the photosphere radius. 
-    % Assuming that the delay time from breakout to GRB emission is $\sim\,2\s$, similar to the duration of the GRB emission, the energy estimate for GRB 170817A suggests a Lorentz factor of $\sim 4$.
-    % However, radio afterglow modelling suggests that the Lorentz factor should be $\gg 4$ for $t < 10\,$days after the merger. % Zhang2019[70]
-    % This implies that the delay time from breakout to GRB emission is $\ll 2\,\s$ and that the total delay time is mostly attributed to the time to launch a jet or the time for breakout to occur. 
-    % This scenario can still work if a post-merger remnant survives $\sim\,1\s$ before launching a jet.
-    % However, this means that similarity between the total delay time of $\sim\,1.7\s$ and the GRB burst durations of $\sim\,2\s$ are coincidental as they are produced by different mechanisms. \par
-    % The second explanation assumes that the majority of the total delay time is accounted by the time it takes from the breakout of the jet to the emission of the GRB~\cite{Zhang2018}.
-    % This can be estimated by the width of the first pulse in GRB 170817A which was $\sim 1\,\s$ but could have been longer due to the weak nature of the burst.
-    % This scenario does not depend on the type of post-merger remnant which may be either a neutron star or a black hole.
-    
-    % [Go through above references in the first blue paragraph]}
-    
-
-%     \begin{itemize}
-%         \item tidal/inspiral methods
-%         \item GW170817
-%         \item other detections
-%         \item Merger outcomes
-
-
-%     \end{itemize}   
-
-% ***************************************************************************************************************************************************************
     \section{Numerical relativity simulations}
 
     
@@ -336,45 +249,34 @@
     
     
     \par
-% Good overall references: Daverio2018, Dietrich2016
-
-
-% ******************************************************************************************************************************************************    
-    % Thesis: Maione2017
-    % Two different conformal Z4 formulations have been studied: the CCZ4 formulation [Alic2012, Alic2013], which retains the full equations and in this way is a covariant formulation, at the price of greater differences respect to BSSN-OK and the need to introduce an additional parameter k3 to be able to evolve also spacetimes containing black holes and the Z4c [Gundlach2005, Bernuzzi2010, Hilditch2013] formulation, which retains only the principal part of the equations, in order to be as close as possible to BSSN-OK, but is not fully covariant and needs the introduction of ad-hoc constraint preserving boundary conditions in order to avoid constraint violations being reflected back inside the grid at the outer boundaries [Ruiz2011]. 
-% ******************************************************************************************************************************************************    
+ 
     The initial conditions for binary neutron star mergers in general relativity are complex and a number of methods have been developed for this task.
     Codes that have been used for this include \texttt{LORENE}~\cite{Gourgoulhon2001} and \texttt{COCAL}~\cite{Tsokaros2015}.
     The \texttt{LORENE} formulation assumes a conformally-flat approximation for  neutron star binaries and uses spectral decomposition to solve for the initial conditions~\cite{Gourgoulhon2001}.
     This formulation constructs quasiequilibrium configurations which are approximations of the inspiral dynamics using exactly circular orbits.
     Quasiequilibrium configurations are also generated by \texttt{COCAL}.
     This is performed by excising regions around the neutron stars and solving Green's integral formula using multipole expansion and finite-difference methods~\cite{Uryu2012,Tsokaros2015}.
-    % Tsokaros2016: also KADATH [36], and SCRID [37,38]
+
     Once the initial conditions have been approximated then the space-time can be evolved.
 
     Space-time evolution methods include the following formulations: Arnowitt-Deser-Misner (ADM)~\cite{Arnowitt2008}\footnote{The original book reference for ADM formalism is out of print and the authors have listed the cited paper as an `intentially unretouched' alternative.},  Baumgarte-Shapiro-Shibata-Nakamura-Oohara-Kojima (BSSNOK)~\cite{Nakamura1987,Shibata1995,Baumgarte1999,Alcubierre2000} and Z4c~\cite{Bona2003,Bona2004,Gundlach2005,Bernuzzi2010,Hilditch2013}. 
-    %, and conformally flat (Isenberg-Wilson-Matthews)~\cite{Isenberg2008}. %Conformal and Covariant Z4 (CCZ4)~\cite{Bona2003,Bona2004,Alic2012,Alic2013},  \par
+    
     The ADM formalism is a Hamiltonian method that splits the Einstein's field equations into separate time and space components.
     This is achieved by applying a gauge that consists of a shift vector and lapse function~\cite{Arnowitt2008}.
     Unfortunately, ADM numerical simulations were found to be unstable to accumulated errors over the simulation time~\cite{Brandt2000,Kidder2001,Alcubierre2001a} and a number of different formulations were developed to improve this. \par
     
-    To aid computation convergence, the BSSNOK method extended the ADM formalism by introducing a conformal factor to the three-metric and selecting a dissipative hyperbolic driver for the  shift vector~\cite{Nakamura1987,Shibata1995,Nakamura1999,Shibata1999,Baumgarte1999,Alcubierre2000,Alcubierre2001}. % Dissipative hyperbolic driver from Alcubierre2001
+    To aid computation convergence, the BSSNOK method extended the ADM formalism by introducing a conformal factor to the three-metric and selecting a dissipative hyperbolic driver for the  shift vector~\cite{Nakamura1987,Shibata1995,Nakamura1999,Shibata1999,Baumgarte1999,Alcubierre2000,Alcubierre2001}. 
     The Z4c formalism modified the BSSNOK method by adding a four-vector of constraints, $Z_\mu$, to the Einstein field equations~\cite{Bona2003,Bona2004,Gundlach2005,Bernuzzi2010,Hilditch2013}. 
     This resulted in a propagating Hamiltonian constraint which helps to reduce constraint-violation growth by damping all constraint violations  except for constant modes~\cite{Gundlach2005}.
     Constraint violations can be more easily tracked as non-vanishing values of $Z_\mu$ though particular attention needs to be paid to reflection of constraint violations at boundaries~\cite{Bernuzzi2010,Ruiz2011,Hilditch2013}.  \par
     
-    % The CCZ4 formalism is a fully convariant extension of the Z4 formalism with the exception of black hole simulations where covariance cannot be maintained. ~\cite{Alic2012}
-
-    % Alic2013: The main advantage of the CCZ4 formulation over the BSSNOK formulation is its ability to dynamically evolve the constraints equations and to couple them with a constraint-damping scheme that leads to a rapid suppression of the violations that are inevitably produced in numerical simulations.
-    % Takami2015: We also note that although we have recently developed a new code, i.e., WHISKYTHC, able to reach high-order convergence [21,22], we have not employed it here mostly because our focus is on the post-merger dynamics, where the large scale shocks reduce the accuracy of both codes to first order, and for which WHISKY appears to be slightly more robust.
     
-    % Tsokaros2016: In this way we find that although global quantities of the system, like the mass and angular momentum, have differences of the order of ≲0.02%, local quantities, like rest-mass density, extrinsic curvature or angular velocity, show pointwise differences that are much larger, of the order of ≲1%. These local differences are then responsible for a ≲0.02%, local quantities, like rest-mass density, extrinsic curvature or angular velocity, show pointwise differences that are much larger, of the order of ≲1%. These local differences are then responsible for a dephasing in the gravitational waves at the merger time (after approximately three orbits) of ∼1.4 radians
 
     
     General-relativisitic hydrodynamic methods include codes such as \texttt{Whisky}~\cite{Baiotti2005}, \texttt{WhiskyTHC}~\cite{Baiotti2005,Radice2014,Radice2014b,Radice2015}, and \texttt{BAM}~\cite{Brugmann2004,Brugmann2008,Thierfelder2011,Dietrich2015,Bernuzzi2016b,Dietrich2019a}. 
     \texttt{WhiskyMHD} is a magneto-hydrodynamic extension to \texttt{Whisky}~\cite{Giacomazzo2007,Giacomazzo2011,Giacomazzo2013}, allowing for the introduction of magnetic fields.
     In this work we use gravitational-wave signals extracted from general-relativisitic hydrodynamic simulations from Refs.~\cite{Bernuzzi2014,Rezzolla2016,Radice2016,Dietrich2017b,Radice2017,Radice2017a,Radice2018,Dietrich2018}. 
-    Refs.~\cite{Bernuzzi2014,Dietrich2017b} use the \texttt{BAM}  evolution code with the Z4c formulation, Refs.~\cite{Radice2016,Radice2017,Radice2017a,Radice2018} use the \texttt{WhiskyTHC} evolution code with the Z4c formulation, and Ref.~\cite{Rezzolla2016} uses the \texttt{Whisky} evolution code with the BSSNOK formulation. \par % Check metric evolution code for Rezzolla2016, have traced back to Baiotti2008 and it looks like BSSNOK
+    Refs.~\cite{Bernuzzi2014,Dietrich2017b} use the \texttt{BAM}  evolution code with the Z4c formulation, Refs.~\cite{Radice2016,Radice2017,Radice2017a,Radice2018} use the \texttt{WhiskyTHC} evolution code with the Z4c formulation, and Ref.~\cite{Rezzolla2016} uses the \texttt{Whisky} evolution code with the BSSNOK formulation. \par 
     
 
     
@@ -395,15 +297,9 @@
     Ref.~\cite{Dietrich2018} state that their post-merger simulations from  the \texttt{CoRe} database are accurate enough to infer the energy and frequency content of the post-merger remnant.
     This is an important point: the uncertainty in the phase evolution  and collapse time of the post-merger remnant, which is discussed further in Sec.~\ref{sec:Intro:StrainAndSpectra}, has had a significant impact on the design of the models developed in this thesis.
 
-    % Baiotti2017: A perhaps disappointing note that needs to be made, however, is that despite this abundance of numerical codes, systematic comparisons of them are seldom done, and the only cases we are aware of are the quantitative comparisons between the SACRA and Whisky codes [160, 490] and between the BAM and SpEC codes [110]; such comparisons are tedious and computationally expensive but important for gauging the systematic errors that the various codes can introduce.
 
-
-% ***************************************************************************************************************************************************************
     \section{Post-merger remnants} \label{sec:Intro:PMR}
-%     \begin{itemize}
-%         \item Supramassive, Hypermassive properties
-%         \item observational methods, 
-%     \end{itemize}
+
 
     Neutron star mergers can result in four outcomes, depending on the total mass of the post-merger remnant and the maximum non-rotating neutron star mass, $\mtov$.
     The four different merger remnants in descending mass order are: black holes, hypermassive neutron stars, supramassive neutron stars, and stable neutron stars.
@@ -423,11 +319,7 @@
     Given a post-merger remnant mass, the deciding factor that discriminates between supramassive neutron stars and hypermassive neutron stars is $\mtov$.
     References~\cite{Margalit2017,Rezzolla2018,Khadkikar2021} found upper limits on $\mtov$ of $\lesssim 2.2\,\msun$ using numerical-relativity simulations with multi-messenger observations of GW170817~\cite{Margalit2017,Rezzolla2018}, and finite temperature modelling of matter~\cite{Khadkikar2021}. 
     Upper limits of $\lesssim 2.3\,\msun$ for $\mtov$ were found using angular momentum and energy considerations~\cite{Shibata2019}, and X-ray afterglow modelling~\cite{Sarin2020}, respectively. \par
-    % Khadkikar2021 hot equation of state => wider uncertainties, relaxed constraints
-    % Margalit2017: Multimessenger of GW170817 => M, R 
-    % Rezzolla2018: Multimessenger of GW170817
-    % Shibata2019: Angular momentum and energy conservation considerations
-    % Sarin2020: X-ray afterglow
+
     Using $\mtov\approx 2.3\,\msun$ as a fiducial value, which is also consistent with the mass range of J0740+6620~\cite{Cromartie2020}, sets the threshold between supramassive and hypermassive neutron stars at $\approx 2.8\,\msun$. 
     This is very close to the total mass of the progenitor neutron stars for GW170817, $2.73^{+0.04}_{-0.01}\,\msun$~\cite{GW170817Properties},  which suggests that, on gravitational-wave data alone, the remnant of GW170817 could have been either a hypermassive neutron star or a supramassive neutron star.\par
     
@@ -442,10 +334,6 @@
     The authors find a maximum core density where the remnant collapses which depends on the amount of differential rotation and is independent of temperature.
     They also show that the remnant reaches the critical density by losing gravitational mass while approximately conserving the baryonic mass.
     The gravitational mass is lost by: secular evolution with constant differential rotation, reduction in the amount of differential rotation, and loss of thermal support.
-    % page 5 \Kaplan2014
-    % Gravitational mass $m_g = m$ in Eq.~\ref{eq:Intro:TOV:mass_gradient}-\ref{eq:Intro:TOV:pressure_gradient} 
-    % with the density $\rho$ in the same equations.
-    % To calculate baryonic mass use $\frac{dM_b}{dr}$ = \frac{4\pi r^2 /rho}{1 + \epsilon}\left(1-\frac{2m_g}{r}\right)
     This additional thermal support extends the lifetime of the surviving post-merger remnant~\cite[e.g.,][]{Bauswein2010}.
  \par
     
@@ -454,11 +342,11 @@
     \begin{align}
         t_{\mathrm{cool}} & \approx 770 \left(\frac{M}{2.7\,\msun}\right)\left(\frac{R}{10\,\km}\right)^{-1}\left(\frac{E_\nu}{10\,\MeV}\right)^2\,\mathrm{ms}, \label{eq:Intro:NeutrinoCooling}        
     \end{align}    
-    % 400 * (20/10) / (2.8/2.7) * (2.8/2.7)  *(M/2.8) (Ev/10)^2 / (R/20) = 400 (M/2.7) (Ev/10)^2 / ((R/20) * (20/10))
+
     where $E_\nu$ is the typical neutrino energy.
     We estimate a cooling time of $\sim 7$\,s by using a typical neutrino energy of $\sim 30\,\MeV$, found in numerical-relativity simulations that implement neutrino trapping~\cite{Sumiyoshi2020}, though this is reasonably uncertain due to the scaling with $E_\nu^2$.\par
     
-    % Palenzuela2015 Ev~10 -20 MeV, Sumiyoshi2020 30 MeV
+
     The timescale that sets the loss of angular momentum due to gravitational waves is given by~\cite{Paschalidis2012}
     \begin{align}
         t_{\mathrm{GW}} & \approx 150 \left(\frac{M}{2.7\,\msun}\right)^{-1}\left(\frac{R}{10\,\km}\right)^{-2}\left(\frac{f_2}{3.3\,\kHz} \right)^{-4}\left(\frac{e}{0.2} \right)^{-2}\,\mathrm{ms}, \label{eq:Intro:GWAngularMomentumLoss}        
@@ -467,37 +355,14 @@
     Here, $a$ and $b$ are the semi-major and semi-minor axes of the neutron star, respectively, such that $R=(a+b)/2$.
     The reference value, $f_2=3.3\,\kHz$, was inferred from our model in Chapter~\ref{chapter:DetectionPE} for numerical-relativity simulation of SLy equation of state with equal-mass $1.35\,\msun$ neutron stars~\cite{Radice2016}.
     We make rough estimate for the ellipticity,  $e\approx0.2$, from the time evolution of the density profile for numerical-relativity simulation of LS220 equation of state with equal-mass $1.35\,\msun$ neutron stars~\cite{Radice2017}.\par
-    % GRLES Simulations of Neutron Star Mergers: https://www.youtube.com/watch?v=Nppxi9E1ljg David Radice's youtube channel
-    
-    % In comparison, the emission of gravitational waves due to ellipticity and f-modes is approximated by:~\cite{Becker2009}
-    % \begin{align}
-    %     h_{\mathrm{GW}} \approx 6\times10^{-29} \left(\frac{M}{2.7\,\msun}\right)\left(\frac{R}{10\,\km}\right)^{2}\left(\frac{f_2}{3.3\,\kHz} \right)^2\left(\frac{d}{40\,\Mpc} \right)^{-1}\left(\frac{e}{0.2} \right), \label{eq:Intro:GWFModes}        
-    % \end{align}
-    % which has been scaled to a distance of $40\,\Mpc$, the distance of GW170817.
+  
     Most postmerger numerical-relativity simulations last for only tens of milliseconds, though some longer simulations have been performed between 50-100\,ms in length~\cite{Rezzolla2010,Ciolfi2017,Ciolfi2019,DePietri2020}.
     % Rezzolla2010 long early simulation showing conservation of M_adm and J_gw
     Although Eq.(\ref{eq:Intro:GWAngularMomentumLoss}) shows an estimated emission time for gravitational waves of $\sim 150\,$ms, the uncertainty in the equation of state could place $f_2$ as low as $\sim 2.2\,\kHz$ and some simulations show that the ellipticity reduces over time~\cite{Takami2015,Shibata2017a}.
     Given these possibilities, a four-fold decrease in $e$ together with a reduction in $f_2$ to $2.2\,\kHz$ would result in $t_{\mathrm{GW}} \sim 12\,$s.
     
     Although the numerical-relativity simulations do not cover enough time period after the merger, they are vital for extracting the gravitational-wave strain in the early post-merger stage where the amplitude of the strain is at its loudest.
-    % Andy comment on length
-    
-
-    
-
-    
-%     \begin{itemize}
-%         \item Show Eos difference in GW strain
-%         \item remnant astroseismology and frequency response
-%         \item Quasi-universal relationships
-%         \item Hot cold Eos
-%     \end{itemize}
-    
-
-    
-
-
-
+ 
 
     \section{Gravitational-wave strain and spectra} \label{sec:Intro:StrainAndSpectra}
 
@@ -529,7 +394,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{{Thesis_SLy_NRonly_plus_freq}.pdf}
-    \caption{Frequency domain representation of the post-merger gravitational-wave strain shown on the right panel of Fig.~\ref{fig:Intro:GWStrain}. %The numerical-relativity simulation uses the SLy equation of state with equal-mass $1.35\,\msun$ neutron stars injected at a post-merger signal-to-noise ratio of 50. 
+    \caption{Frequency domain representation of the post-merger gravitational-wave strain shown on the right panel of Fig.~\ref{fig:Intro:GWStrain}. 
     Four main spectral peaks are visible in the gravitational-wave spectrum with the dominant peak, $\fpeak$, has the largest amplitude at $\sim 3300\,\Hz$. The sensitivity curves for Advanced LIGO and Advanced Virgo are shown as dashed black, and dotted black,  respectively.} 
         \label{fig:Intro:GWFreq}
 \end{figure}     
@@ -538,12 +403,9 @@
     The amplitude is  $|\tilde{h}(f)|\sqrt{f}$, where $\tilde{h}(f)$ is the Fourier transform of the gravitational-wave strain. 
     The post-merger gravitational-wave spectrum is dominated by primary post-merger frequency, $\fpeak$, the main f\Hyphdash*mode oscillation of the remnant, which is $\sim 3.3\,\kHz$ for this simulation~\cite[e.g.,][]{Shibata1992, Zhuge1994,Stergioulas2011}. \par
     
-    % fmode Shibata1992, Zhuge1994
-    %fspiral, f_2_0, f_2+0, fpeak
-        %  The peaks at frequencies $f_{2-0},f_{2+0}$ may result from coupling between a quasi-radial oscillation mode and $f_{\mathrm{peak}}$~\cite{Stergioulas2011}.
-        % The peak at frequency $f_{\mathrm{spiral}}$ may result from the slower rotation-rate of tidally-deformed matter at the outer edges of the post-merger remnant~\cite{Bauswein2015}.
+   
     Two additional oscillation modes were found in simulations that were caused by the interaction between the main f\Hyphdash*mode oscillation ($m=2$) and the $m=0$ radial pressure mode~\cite{Stergioulas2011}.
-    % Reference~\cite{Stergioulas2011} proposed that the peaks above and below $\fpeak$ can be explained by the interaction between the dynamics associated with $\fpeak$ ($m=2$) and the $m=0$ radial pressure mode.
+   
     This results in a modulated signal that should be present in the frequency response at frequencies $\fpeak \pm f_{m=0}$, designated as $\ftwominuszero$ and $\ftwopluszero$, respectively.
     %\par
     The $\ftwominuszero$ peak was found to be particularly strong in spectra for high-mass mergers as long as prompt collapse does not occur~\cite{Bauswein2015}.
@@ -561,19 +423,7 @@
     References~\cite{Bauswein2019a,Vretinaris2019} support the interpretation of Ref.~\cite{Bauswein2015}, citing that a larger simulation set shows that $f_1$ is actually a combination of $\fspiral$ or $\ftwominuszero$ whereas a smaller simulation set, as in Refs.~\cite{Takami2014,Takami2015,Rezzolla2016}, is not large enough to highlight this.
 \par
     
-    
-% \begin{figure}[H]
-%     \centering
-%     \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{{thesis_GW_spectrogram_5x7T_reduced_no_lines}.png}}%
-%     \caption{Spectrograms (Figure from Ref.~\cite{Rezzolla2016}\protect\footnotemark) showing the frequency evolution of the post-merger remnant over time for equal-mass $1.35\,\msun$ neutron star mergers using five different equations of state at a distance of $50\,\Mpc$.  The amplitude of the spectrogram is indicated by the colour bar at the top of the image. The dominant post-merger oscillation frequency,  $\fpeak$, is shown as a dark-green solid line.} \label{fig:Intro:Rezzolla2016Spectrograms}
-% \end{figure}
-%     Figure~\ref{fig:Intro:Rezzolla2016Spectrograms} \footnotetext{This figure is a  subset of Fig.~4 from Ref.~\cite{Rezzolla2016}\label{foot:Intro:Rezzolla2016imageref}.} shows spectrograms for the numerical-relativity simulations of the post-merger gravitational-wave strain at $50\,\Mpc$ using five different equations of state with equal-mass $1.35\,\msun$ neutron stars~\cite{Rezzolla2016}.\footnote{See footnote \footref{foot:Intro:Rezzolla2016imageref}.}
-%     The equations of state progress from the stiffest, GNH3, in the left panel, to the softest, APR4, in the right panel.
-%     The dominant post-merger frequency, $\fpeak$, is shown as a solid dark-green line. 
-%     The magnitude of the spectrogram for a given frequency and time is indicated by the colour bar above the image.
-%     In all panels except for APR4, there is some positive drift in the dominant post-merger frequency over time.
-%     Furthermore, the spectrogram for GNH3 shows that there is also some frequency drift for the lower frequency peak at $\sim~1500\Hyphdash2000\,\Hz$.\footnote{Also note that the large frequency increase in the ALF2 spectrogram at $\sim 20\,\ms$ is due to the collapse of the remnant to a black hole.}
-    
+ 
     
     Two models of the time-domain gravitational-wave strain were used for the basis for our model in Chapter~\ref{chapter:DetectionPE}.
     The first model used a third-order exponentially-damped sinusoid and successfully matched a simulation using DD2 equation of state with equal-mass $1.35\,\msun$ neutron stars~\cite{Bauswein2016}.
@@ -590,8 +440,7 @@
     
     A number of challenges are presented by the gravitational-wave strain generated with numerical-relativity simulations.
     Phase errors between successive resolutions accumulate over time and it is not unusual to see phase differences of $\sim 1$\,rad by the time of the merger for the finest resolutions~\cite[e.g.,][]{Radice2014b}.
-    % Bernuzzi2012: 2-4rad compared to post-Newtonian Taylor T4 at the time of merger, this is wrong it is the pN approximate that has error and this work is only interested up to contact.
-    % Radice2014b: WhiskyTHC 0.6 rad between low and high resolutions
+  
     Reference~\cite{Takami2015} examined the role of the spatial resolution on the instantaneous phase of the gravitational-wave strain and found a phase difference of $0.9$\,rad between the the finest resolution tests.
     This results in a loss of $\sim 40\%$ of the signal-to-noise compared to a perfectly matched signal when using a matched-filter detection. \par
     
@@ -606,51 +455,18 @@
     This is another motivation for simple models that are able to match the gravitational-wave strain from numerical-relativity simulations while remaining flexible to variations beyond the simulation outputs.
     In particular, models that can measure the collapse time of the remnant are important as numerical-relativity simulations are unable to predict this feature well. \par
 
-    
-
-
-
-
-
-%         \item Show Eos difference in GW strain
-%         \item remnant astroseismology and frequency response    
-
-
-%  East2019a, Hotokezaka->2016PhRvD..93f4082H, Alic2013
-    
-    
-    
-    % ordered: Andersson1998b, Bauswein2012, Bauswein2012a, Yagi2013,Yagi2013a, Hotokezaka2013
-    
-    % others: Andersson1998b, Bauswein2012, Bernuzzi2014, Rezzolla2018, Iosif2020, Rezzolla2016, Bose2018, Sun2020
-
-    % Bauswein2012,Bauswein2012a,Hotokezaka2013,Bernuzzi2014,Takami2014,Bernuzzi2015,Bauswein2015,Takami2015,Rezzolla2016,Bauswein2019
-    
-    % Andersson1998b: time constant for f-mode maps o compactness
-
 
     Quasi-universal relationships have been found relating the properties of the post-merger remnant and the progenitor neutron stars. 
     Perturbations in general relativity were used to find relationships between the frequency of neutron star f-modes and both the neutron star density and compactness~\cite{Andersson1998b}.
     The relationship between the f-mode frequency and the neutron star density was later refined using conformally-flat solutions of the Einstein field equations, and additional relationships were found between the neutron star radius and the f-mode frequency~\cite{Bauswein2012,Bauswein2012a}.
     Simulations of perturbed slowly-rotating neutron stars highlighted relationships between the neutron star moment of inertia, the spin-induced quadrupole moment, and the dimensionless tidal deformability~\cite{Yagi2013,Yagi2013a}. \par
-%     \begin{figure}[H]
-%     \centering
-%         \includegraphics[scale=1.0]{{LambdaF2}.png}
 
-%         \caption{Quasi-universal relationship between the dominant post-merger oscillation frequency, shown here as $f_2$, and the dimensionless quadrupolar tidal deformability, $\Lambda$, shown here as $(\lambda/\bar{M}^5)^{1/5}$~(Image Ref.~\cite{Takami2015}). Each colour shows a different equation of state.} 
-%         \label{fig:Intro:LambdaFpeak}
-
-% \end{figure}
     Relationships were then found between the progenitor neutron star ($l=2$) dimensionless quadrupolar tidal deformability, $\Lambda$, and a number of spectral features.
     The maximum gravitational wave frequency at the time of merger, $\fmax$, was closely related to $\Lambda^{1/5}$ for equal-mass neutron stars~\cite{Read2013}.
     A linear correlation was subsequently found between $\Lambda^{1/5}$ and the dominant post-merger f-mode frequency, $\fpeak$.
     We use this linear relationship in the model discussed in Chapter~\ref{chapter:ComputingFastReliable} to re-centre the gravitational-wave spectra after alignment.
 
 
-    
-    
-
-    
     
     
     \section{Post-merger gravitational-wave models} 
@@ -685,85 +501,9 @@
     If the proposed Neutron star Extreme Matter Observatory is operational, then this distance increases to $\sim\!18\Hyphdash*26\,\Mpc$ thereby increasing the effective volume and hence detection rate by a factor of $\sim 30$.
     
     
-    
-    
-
-    
-%      and \ref{chapter:CollapseTime} use Bayesian inference in a gravitational-wave framework using the \texttt{Bilby} package and \texttt{Dynesty} nested-sampler~\cite{Ashton2019,Speagle2019}.
-%     The base model for both of these chapters is a third-order exponentially-damped sinusoid with a frequency-drift term, Eqs.~\ref{eq:htotal2}-\ref{eq:hmode2}.
-%     In Chapter~\ref{chapter:DetectionPE}, we use this model for detection and parameter estimation of post-merger gravitational-wave strain.
-%     One major difference between this model and the hierarchical model is that the former is able to model the time domain of the gravitational-wave strain whereas the latter is only able to model the amplitude of the gravitational-wave spectra.
-%     In Chapter~\ref{chapter:CollapseTime}, we extend the model from Chapter~\ref{chapter:DetectionPE} to allow the measurement of the collapse time of the gravitational-wave strain.
-
-    
-%     In Chapter~\ref{chapter:DetectionPE}, we use a $0.2\,\ms$ rising-edge Tukey window applied to the time-domain post-merger gravitational-wave strain to reduce artefacts due to Gibbs phenomenon.
-%     Gibbs phenomenon can cause unwanted oscillations in the time domain due to discontinuities in the signal amplitude~\cite{Gibbs1899}.
-%     The window rise-time is kept small so that we can measure the performance of the model to the coalescence time (Figs.~\ref{fig:OF_MF_SNR_FF5ms}-\ref{fig:TCOALESCENCE}) without unduly filtering out early post-merger signals.
-    
-%     As each of the three modes of the base model are analytically identical, sampling of the model can be difficult.
-%     This is because there are six permutations of model parameters for every set of parameters.
-%     For example, if the posterior has support around frequencies $(f_0,f_1,f_2)=(1200, 1500, 3300)$ then all six permutations of these frequencies are also valid solutions for the posterior, including $(f_0,f_1,f_2)=(3300, 1200, 1500)$.
-%     This means that the posterior volume is effectively six times larger, making it much more difficult to sample. \par
-    
-%     In Chapter~\ref{chapter:DetectionPE}, we find that we can remove the redundant permutations by ordering the maximum spectral amplitudes for each mode.
-%     The maximum spectral amplitude for the $j$th mode is given by $H_j = \max(|\tilde{h}_j(f)|\sqrt{f})$ and we enforce a descending order such that $H_0>H_1>H_2$  (see also Eq.~\ref{eq:modesorting2}). 
-%     This ensures that the dominant post-merger f-mode peak, $\fpeak$, corresponds to mode zero (ie. $\fpeak=f_0$).
-%     We implement the mode sorting with constrained priors in \texttt{Bilby}.
-%     To find the posteriors, we use \texttt{Bilby} and \texttt{Dynesty} to perform nested sampling with 750 live points.
-%     If the number of live points is too small, then the sampler will loose valid parts of the posterior volume\footnote{If there are not enough live points within a particular mode then all live points can leave this mode by random chance. This is called mode `die-off'. The simplest solution to this is to increase the total number of live points.}, whereas an excessively large number of live points will take too long for the sampler to complete.
-%  \par
-    
-    
-    
-%     Adding a collapse-time parameter to the post-merger gravitational-wave model makes convergence of the sampler more difficult.
-%     This is because the signal amplitude can be quite small at the time of collapse and the dimensionality of the system is increased by one.\footnote{The dimensionality would actually be increased by two, as we introduce two parameters: $\tc$ and $\tw$. For convergence reasons we fix $\tw=2\,\ms$. See Chapter~\ref{chapter:CollapseTime} for further information on this.}
-%     In response to this, in Chapter~\ref{chapter:CollapseTime}, we find that a number of additional measures are required to aid convergence. 
-%     Firstly, we sort the mode frequencies  in descending order, $f_0 > f_1 > f_2$, (Eq.~\ref{eq:freqsorting3}) in addition to the mode amplitude sorting used in Chapter~\ref{chapter:DetectionPE}.
-%     This limits our posteriors to spectral peaks at frequencies $\lesssim \fpeak=f_0$.
-%     Secondly, we implement a $2\,\ms$ rising-edge Tukey window to reduce sensitivity to the gravitational-wave strain for $\lesssim 2\,\ms$.
-%     Finally, we double the number of live points to 1500 to aid convergence of the sampler. \par
-
-    
 
 
-
-%     However, to aid performance we implement mode sorting by  overriding the \texttt{log\_likelihood\_ratio} method of  \texttt{bilby.gw.likelihood.GravitationalWaveTransient}.
-%     When the maximum spectral amplitudes are not in descending order, the log likelihood method returns \texttt{-1e200}, effectively removing that point from the posterior. 
-%     This is also implemented by  overriding the \texttt{log\_likelihood\_ratio} method of  \texttt{bilby.gw.likelihood.GravitationalWaveTransient}.
-%     If the frequencies are not arranged in descending order then a log likelihood value of \texttt{-1e200} is returned and the spectral amplitudes are not calculated.
-% \par
-
-%     In Chapters~\ref{chapter:DetectionPE} and ~\ref{chapter:CollapseTime}, the total duration of the signal segment is $150\,\ms$ with a sampling frequency of $16384\,\Hz$.
-%     Furthermore, we use a rising-edge Tukey window beginning at the merger time, $t\equiv 0$ to reduce artefacts due to Gibbs phenomenon. 
-%     In Chapter~\ref{chapter:DetectionPE}, we use a $0.2\,\ms$ rising-edge Tukey window so that we can measure the performance of the model to the coalescence time (Figs.~\ref{fig:OF_MF_SNR_FF5ms}-\ref{fig:TCOALESCENCE}) without unduly filtering out early post-merger signals.
-%     For~\ref{chapter:CollapseTime}, as we are interested in measuring the collapse time for longer signals, $\gtrsim 5\,\ms$, we use a longer $2\,\ms$ rising-edge Tukey window.
-%     The parameters we use for \texttt{Dynesty}/\texttt{Bilby} in Chapter~\ref{chapter:DetectionPE} are:  $\texttt{npoints} = 750$, $\texttt{walks} = 150$.
-%     Whereas it was necessary to use slower, more robust parameters for Chapter~\ref{chapter:CollapseTime}: $\texttt{npoints} = 1500$, $\texttt{walks} = 150$, $\texttt{nact} = 10$, $\texttt{maxmcmc} = 15000$.
-
- \par
-
-    % We encounter problems with initial analytic injections in Chapter~\ref{chapter:CollapseTime} for collapse time runs.
-    % When we perform injections with all parameters fixed except for the collapse time and the exponential decay time-constant, with no injected noise and a small signal-to-noise ratio, we find that the collapse time posterior is biased\footnote{For zero noise injections, the gravitational-wave likelihood is still weighted by the power-spectral-density even though no Gaussian noise is added to the signal. This is why the signal-to-noise ratio has meaning for zero noise injections.}.
-    % We also find that the two-dimensional posteriors are not biased and that the bias is introduced when the one-dimensional posteriors are calculated.
-    % We also found that we could not simultaneously recover both $\tc$ and $\tw$ even in loud signals with zero injected noise and found that using a $\tw=2\,\ms$ was a good compromise allowing successful recovery for the collapse time.
-
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-%     \begin{itemize}
-%         \item Machine learning
-%         \item Validation
-%         \item Bayesian inference
-%         \item nested sampling         
-%     \end{itemize}
+   
 
   
 
