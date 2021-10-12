@@ -196,7 +196,7 @@
         We simulate ten different Gaussian noise realisations with {\textsc{Bilby}}, to examine the response of the model to variations in detector noise. 
         We limit this to ten noise realisations to keep the computation time manageable.
         The priors on the model parameters are $\pi(\boldsymbol{\theta})$. 
-        The noise-weighted inner product in Eq.~\ref{eq:likelihood2} is defined by:
+        The noise-weighted inner product in Eq.(\ref{eq:likelihood2}) is defined by:
         \begin{align}
         	\left<h_1,h_2\right>\equiv4\, \mathrm{Re} \int df\frac{\tilde{h}_1(f)\tilde{h}^{*}_2(f)}{S_h(f)},\label{eq:inner_product2}
         \end{align}
@@ -233,7 +233,7 @@
     \begin{equation}
     	\mathcal{F}(d(t),h(\boldsymbol{\theta},t))\equiv\frac{\left<d(t)|h(\boldsymbol{\theta},t)\right>}{\sqrt{\left<d(t)|d(t)\right>\left<h(\boldsymbol{\theta},t)|h(\boldsymbol{\theta},t)\right>}}.\label{eq:FF2}
     \end{equation}
-    The fitting factor, calculated with noise from one detector at Advanced LIGO design sensitivity~\cite{PSD:aLIGO}, quantifies the loss in signal-to-noise due to signal mismatch in relation to an optimal signal-to-noise ratio, Eq.~\ref{eq:OptimalSNR2}. \par
+    The fitting factor, calculated with noise from one detector at Advanced LIGO design sensitivity~\cite{PSD:aLIGO}, quantifies the loss in signal-to-noise due to signal mismatch in relation to an optimal signal-to-noise ratio, Eq.(\ref{eq:OptimalSNR2}). \par
  
     The median fitting factors are $0.92$ and $0.95$, for SLy-M1.350-$\Lambda$390 and LS220-M1.350-$\Lambda$684, respectively. As the detection rate scales as $\mathcal{F}^3$~\cite{Apostolatos95}, the reduction in detection rate due to the above mismatch is 22\% and 14\% respectively for these two waveforms. \par
         \begin{figure}[H]
@@ -282,7 +282,7 @@
      In Fig.~\ref{fig:OF_MF_SNR_FF5ms} we investigate the model performance to uncertainties in the coalescence time.
      We show how the fitting factor and matched-filter signal-to-noise ratio change when starting the adopted model at various times after the coalescence time.
      We multiply the numerical-relativity injection, $d(t)$, by the Heaviside step function, $\mathcal{H}(t-t_{delay})$, and evaluate the model, $h(\boldsymbol{\theta},t-t_{delay})$, for $t \geq t_{delay}$.
-     The matched filter signal-to-noise ratio is calculated using Eq.~\ref{eq:MatchedFilterSNR2} with a single detector at Advanced LIGO sensitivity.
+     The matched filter signal-to-noise ratio is calculated using Eq.(\ref{eq:MatchedFilterSNR2}) with a single detector at Advanced LIGO sensitivity.
      We use numerical-relativity injection, SLy-M1.350-$\Lambda$390, selected due to compatibility with the tidal parameters inferred from GW170817.
      A delay time of zero includes the entire post-merger waveform, whereas a delay time of $2\,$ms excludes the first $2\,$ms of the injection after the coalescence time. 
      The fitting factor is lower ($\sim 0.91$) for small delay times and increases to $\sim\,0.96$ at $2\,$ms. 
@@ -449,7 +449,7 @@
     In addition to the aforementioned analytical models~\cite{Bauswein2016,Bose2018}, other work have generated analytical post-merger gravitational-wave  models. 
     In Ref.~\cite{Hotokezaka2013}, a model  was generated for the time-based amplitude and phase of the complex gravitational-wave strain using a smooth piece-wise function for the amplitude. 
     The time-based phase was fit by the combination of a polynomial and exponentially-damped sinusoid using an iterative CMA-ES (covariance matrix adaption evolution search) fitting algorithm.
-    The maximum fitting factors were  calculated in the time domain without noise weighting and are not directly comparable to the noise-weighted fitting factors calculated with Eq.~\ref{eq:inner_product2}.
+    The maximum fitting factors were  calculated in the time domain without noise weighting and are not directly comparable to the noise-weighted fitting factors calculated with Eq.(\ref{eq:inner_product2}).
     The maximum fitting factors were  $\sim\!0.92\,$\nobreakdash-$\,0.98$ for 95\% of the 54 waveforms.\par
     
     A frequency-domain model was introduced in Ref.~\cite{Messenger2014} from analysing the major spectral peaks of the whitened power spectrum.
@@ -547,10 +547,10 @@ Table~\ref{tbl:NRwaveforms} shows the simulation designator for this paper, the 
 \end{table}
 \section{Priors}
 \label{appendix:b2}
-    The priors are listed in Eqs.~\ref{eq:firstprior2}\Hyphdash*\ref{eq:w012} with $\mathcal{U}(a,b)$ representing a uniform prior distribution from $a$ to $b$. 
+    The priors are listed in Eqs.(\ref{eq:firstprior2}\Hyphdash*\ref{eq:w012}) with $\mathcal{U}(a,b)$ representing a uniform prior distribution from $a$ to $b$. 
     The mode number $j$ is limited to $\lbrace 0,1,2 \rbrace$ and the mode number $i$ is restricted to $\lbrace 0,1 \rbrace$. 
     The priors in Eqs.~\ref{eq:modesorting2}\Hyphdash*\ref{eq:w012} are constrained priors. 
-    These restrictions are enforced in addition to the standard priors. The prior in Eq.~\ref{eq:modesorting2} ensures that the maximum spectral amplitude of each mode is decreasing. 
+    These restrictions are enforced in addition to the standard priors. The prior in Eq.(\ref{eq:modesorting2}) ensures that the maximum spectral amplitude of each mode is decreasing. 
     This results in $f_0$ converging to the loudest peak. 
     \begin{eqnarray}
         \log_{10}{H} & \sim & \mathcal{U}(-24, -19)\label{eq:firstprior2}  \\

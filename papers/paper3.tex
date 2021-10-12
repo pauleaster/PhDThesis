@@ -189,7 +189,7 @@
     Here, $H$ is an overall amplitude scaling factor, $w_j$ is the relative amplitude of the $j$th mode, $T_j$ is the corresponding exponential damping time constant, and $f_j$ is the corresponding frequency.
     The linear frequency-drift term is $\alpha_j$ and the initial phase  is $\psi_j$.
     The time, $t$, is defined, such that $\max\left[h_+^2(\boldsymbol{\theta},t)+h_\times^2(\boldsymbol{\theta},t)\right]$ occurs when $t=0$. 
-    The cross polarisation for Eq.~\ref{eq:hplus3} is found by applying a $\pi/2$ phase shift to $\psi_j$.
+    The cross polarisation for Eq.(\ref{eq:hplus3}) is found by applying a $\pi/2$ phase shift to $\psi_j$.
     More details on this model can be found in Ref.~\cite{Easter2020}.
     
     We extend this model by introducing a collapse in the gravitational-wave strain using the falling edge of a Tukey window.
@@ -229,7 +229,7 @@
     \par
       
     We use \textsc{Bilby}, a Bayesian inference package~\cite{Ashton2019}, to obtain posteriors, $p(\boldsymbol{\tilde{\theta}}~|~s_{\varphi,\mathrm{c}}(t))$ from a numerical relativity injection with enforced collapse starting at $t=\tc$ with width $\tw=2$\,ms.
-    Posteriors are calculated using waveforms detailed in Eqs.~\ref{eq:hplus3}\Hyphdash*\ref{eq:tukeyfallingedge3}. 
+    Posteriors are calculated using waveforms detailed in Eqs.(\ref{eq:hplus3}\Hyphdash*\ref{eq:tukeyfallingedge3}). 
     See Ref.~\cite{Easter2020} for further details of the gravitational-wave likelihood, and Appendix~\ref{appendix:a3} for additional information on the priors.
     \par
     \pagebreak
@@ -247,7 +247,7 @@
     Furthermore, as the results are pessimistic, with detections not expected until Cosmic Explorer and Einstein Telescope are online, changing this selection criterior will not substantially change these results. \par
 
     
-    We perform numerical-relativity injections with the full waveform, Eq.~\ref{eq:scol3}, at a grid of distances and apply the above rules to determine whether we successfully recover $\tc$.
+    We perform numerical-relativity injections with the full waveform, Eq.(\ref{eq:scol3}), at a grid of distances and apply the above rules to determine whether we successfully recover $\tc$.
 \begin{figure*}
     \centering
     \includegraphics[scale=0.24]{MaximumDistancePanelLabelledGW170817.pdf}
@@ -257,7 +257,7 @@
 \vspace{-0.25cm}    
 \section{Results}\label{sec:results3}
     We inject post-merger numerical-relativity waveforms modified to collapse at $t=\tc$ and sample posteriors for $\boldsymbol{\tilde{\theta}}$.
-    We then calculate posterior waveforms, $h_{\varphi,c}(\boldsymbol{\tilde{\theta}},t)$, from Eqs.~\ref{eq:hcol3}\Hyphdash*\ref{eq:tukeyfallingedge3}.
+    We then calculate posterior waveforms, $h_{\varphi,c}(\boldsymbol{\tilde{\theta}},t)$, from Eqs.(\ref{eq:hcol3}\Hyphdash*\ref{eq:tukeyfallingedge3}).
     Fig.~\ref{fig:TimeResponse} shows example posterior waveforms for the plus polarisation (left panels) and collapse-time posterior distributions (right panels) for numerical-relativity injections using an SLy equation of state with equal-mass $1.35\,\mathrm{M}_\odot$ progenitor neutron stars.
     The three panels have $\tc=5$\,ms (upper panels), $\tc=10$\,ms (centre panels), and $\tc=15$\,ms (lower panels).
     The left panels show the numerical-relativity injection (plus polarisation) in black and the posterior waveforms in blue.
@@ -292,9 +292,9 @@
     \par
     For injections where we can recover the collapse time, the dominant post-merger frequency is well constrained at $f_0 \lesssim 2\%$, $f_0 \lesssim 1\%$, and $f_0 \lesssim 0.2\%$ for injections of $\tc=5$\,ms, $\tc=10$\,ms and $\tc=15$\,ms, respectively. 
     Finally, we find no significant correlations between $\tc$ and other model parameters.
-    We also attempt to measure the maximum detection distance where we can recover $\tc=20$\,ms and find that limitations in the third-order exponentially-damped sinusoidal model, Eq.~\ref{eq:hplus3}, prevent recovery of such collapse times.
+    We also attempt to measure the maximum detection distance where we can recover $\tc=20$\,ms and find that limitations in the third-order exponentially-damped sinusoidal model, Eq.(\ref{eq:hplus3}), prevent recovery of such collapse times.
     For $\tc > 15$\,ms signals, the analytical model cannot successfully track the time-domain phase of the gravitational-wave strain.
-    This limitation could be overcome by increasing the complexity of the frequency evolution in Eq.~\ref{eq:hplus3}, possibly introducing a quadratic frequency evolution term~\cite{Bose2018}.
+    This limitation could be overcome by increasing the complexity of the frequency evolution in Eq.(\ref{eq:hplus3}), possibly introducing a quadratic frequency evolution term~\cite{Bose2018}.
     Additionally, unmodelled searches such as \textsc{BayesWave} could be modified to measure the collapse time of the remnant~\cite{Cornish2015,Littenberg2015,Chatziioannou2017,Torres-Rivas2019}.\par
 \vspace{-0.25cm}
 \section{Discussion}\label{sec:discussion3}
@@ -357,7 +357,7 @@
 
 \section{Priors}
 \label{appendix:a3}
-    The priors are listed in Eqs.~\ref{eq:firstprior3}\Hyphdash*\ref{eq:w013} with $\mathcal{U}(a,b)$ representing a uniform prior distribution from $a$ to $b$. 
+    The priors are listed in Eqs.(\ref{eq:firstprior3}\Hyphdash*\ref{eq:w013}) with $\mathcal{U}(a,b)$ representing a uniform prior distribution from $a$ to $b$. 
     The mode number $j$ is limited to $\lbrace 0,1,2 \rbrace$. 
     The priors in Eqs.~\ref{eq:freqsorting3}\Hyphdash*\ref{eq:w013} are constraining priors. 
     These restrictions are enforced in addition to the standard priors. 
