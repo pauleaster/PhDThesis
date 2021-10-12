@@ -83,7 +83,7 @@
     The gravitational constant is $G$ and the speed of light in vacuum is $c$, though for remainder of this work we will use geometric units of $G=c=1$ unless otherwise stated. 
     Equation~\ref{eq:Intro:GeqT} demonstrates how the curvature of the space-time, $G_{\mu\nu}$, alters the dynamics of matter, $T_{\mu\nu}$, and vice-versa. \par
     Movement of matter in space can generate gravitational waves.
-    For simulation purposes, the movement of matter can be modelled by the Einstein field equations~Eq.~\ref{eq:Intro:GeqT} and perturbations of black holes~\cite[e.g.,][]{Moncrief1974,Abrahams1996,Andrade1999,Nagar2005}.
+    For simulation purposes, the movement of matter can be modelled by the Einstein field equations~Eq.(\ref{eq:Intro:GeqT}) and perturbations of black holes~\cite[e.g.,][]{Moncrief1974,Abrahams1996,Andrade1999,Nagar2005}.
     This methodology allows the calculation of multipole functions of odd ($\mathcal{Q}^\times_{lm}$) and even ($\mathcal{Q}^+_{lm}$) parity, with angular indices of $(l,m)$.
     These multipoles can be evaluated by numerical-relativity simulations which allow the extraction of gravitational waves.
 % \redtext{Movement of matter in space generates mass multipoles that can be related to perturbations of black holes.
@@ -103,13 +103,13 @@
     \end{align}   
     Here, $r$ is the distance to the gravitational-wave source and ${}_{-2}Y^{lm}$ are the spin-weighted spherical harmonics with spin $s=-2$ and angular indices of $(l,m)$.
     For most sources, gravitational waves are predominantly emitted in the $l=m=2$ mode. 
-    In this case Eq.~\ref{eq:Intro:MultipoleExpansion} evaluates to
+    In this case Eq.(\ref{eq:Intro:MultipoleExpansion}) evaluates to
      \begin{align}
         h_{+} + i h_{\times} & = \frac{1}{2 r} \sqrt{\frac{5}{2\pi }} e^{2 i \phi } \cos ^4\left(\frac{\theta }{2}\right)\left(\mathcal{Q}^{+}_{22} -i \int_{-\infty}^t\mathcal{Q}^\times_{22}(t')dt'\right), \label{eq:Intro:MultipoleExpansionlm22}
     \end{align}
     where  $\theta$ is the polar angle and $\phi$ is the azimuthal angle usually defined relative to orbital angular momentum vector. \par
     
-    The energy loss due to gravitational waves can be calculated from Eq.~\ref{eq:Intro:MultipoleExpansion} as~\cite{Nagar2005}
+    The energy loss due to gravitational waves can be calculated from Eq.(\ref{eq:Intro:MultipoleExpansion}) as~\cite{Nagar2005}
      \begin{align}
         \frac{dE}{dt} & = \frac{1}{32 \pi}\sum_{l,m} \left(\left|\frac{\mathrm{d} \mathcal{Q}^{+}_{lm}}{dt}\right|^2 + \left|\mathcal{Q}^\times_{lm}\right|^2\right). \label{eq:Intro:EnergyLoss}
     \end{align}
@@ -129,7 +129,7 @@
         \frac{df}{dt} & = \frac{96}{5}\pi^{8/3}\mathcal{M}^{5/3}f^{11/3}, \label{eq:Intro:FreqEvolution}        
     \end{align}   
     where $\mathcal{M} \equiv \mu^{3/5} M^{2/5}$ is the chirp mass of the binary system. 
-    Using Eqs.~\ref{eq:Intro:OrbitalEvolution}\Hyphdash*\ref{eq:Intro:FreqEvolution}, an expression for the frequency and the gravitational-wave strain magnitude can be calculated~~\cite[e.g.,][]{Cutler1994}: 
+    Using Eqs.(\ref{eq:Intro:OrbitalEvolution}\Hyphdash*\ref{eq:Intro:FreqEvolution}), an expression for the frequency and the gravitational-wave strain magnitude can be calculated~~\cite[e.g.,][]{Cutler1994}: 
       \begin{align}
       f &  \propto \mathcal{M}^{- 5/8}(t_c-t)^{- 3/8},\label{eq:Intro:chirp_f}\\
         % |h(t)| & \propto  \frac{\pi^{2/3}}{D}\left(\frac{576\mu^3 M^2}{5}\right)^{1/4}(t_c-t)^{-1/4}, \label{eq:Intro:chirp_ht_old} ,\\
@@ -137,7 +137,7 @@
         % Calculated by Cutler1994 (2.12) + (2.11) + Chirp mass defn
     \end{align}
     where $t$ is the time, $t_c$ is the time until coalescence, and $D$ is the luminosity distance to the source. 
-    The combination of Eq.~\ref{eq:Intro:chirp_f}~and~\ref{eq:Intro:chirp_ht} result in the chirp waveform detected in the inspiral of compact object mergers.
+    The combination of Eq.(\ref{eq:Intro:chirp_f})~and~Eq.(\ref{eq:Intro:chirp_ht}) result in the chirp waveform detected in the inspiral of compact object mergers.
     \par
     The first direct gravitational-wave detection from the inspiral of a binary neutron star merger, GW170817, was observed by a detector network consisting of the LIGO detectors at Hanford, Washington and Livingston, Louisiana in the USA, and the Virgo detector in Cascina, Italy~\cite{AdvancedLIGO2015,AdvancedVirgo2015,GW170817Detection}. 
     All three detectors consist of `L' shaped laser interferometers with free-falling test-masses.
@@ -250,15 +250,15 @@
     
 
     % Damour2012 in terms of tidal coupling constant, $\kappa_2^T$
-    Gravitational-wave strain emitted from the inspiral of binary neutron star mergers, approximated by Eqs.~\ref{eq:Intro:FreqEvolution}\Hyphdash*\ref{eq:Intro:chirp_ht}, can be recast in the frequency domain using the stationary phase approximation~\cite{Cutler1994}
+    Gravitational-wave strain emitted from the inspiral of binary neutron star mergers, approximated by Eqs.(\ref{eq:Intro:FreqEvolution}\Hyphdash*\ref{eq:Intro:chirp_ht}), can be recast in the frequency domain using the stationary phase approximation~\cite{Cutler1994}
     \begin{align}
         h_{22}(f) & \equiv \frac{\mathcal{A}}{D}\mathcal{M}^{5/6}f^{-7/6} \exp(i\Psi(f)), \label{eq:Intro:StationaryPhaseApproxH22} \\
         \Psi(f) & = 2\pi f t_c - \phi_c - \frac{\pi}{4} +\frac{3}{4}\left(8\pi\mathcal{M}f\right)^{-5/3}, \label{eq:Intro:StationaryPhaseApproxPsi} 
     \end{align}
     where $h_{22}(f)$ is the Fourier transform of the $(l,m)=(2,2)$ gravitational-wave strain, and $\Psi(f)$ is the corresponding phase.
-    Here, $f$ is the frequency~(Eq.~\ref{eq:Intro:FreqEvolution}), $\phi_c$ and $t_c$ are the phase and time of coalescence, and $\mathcal{A}$ is a factor that depends on the orientation of the system.\footnote{The orientation factor, $\mathcal{A}$, depends on angles intrinsic and extrinsic to the binary system. Intrinsic angles include the angles defining the relative orientation of the neutron star spins to the orbital plane. Extrinsic angles include the angles defining the relative orientation between the orbital plane and each of the detectors.}
+    Here, $f$ is the frequency~(Eq.(\ref{eq:Intro:FreqEvolution})), $\phi_c$ and $t_c$ are the phase and time of coalescence, and $\mathcal{A}$ is a factor that depends on the orientation of the system.\footnote{The orientation factor, $\mathcal{A}$, depends on angles intrinsic and extrinsic to the binary system. Intrinsic angles include the angles defining the relative orientation of the neutron star spins to the orbital plane. Extrinsic angles include the angles defining the relative orientation between the orbital plane and each of the detectors.}
     Equations~\ref{eq:Intro:StationaryPhaseApproxH22}\Hyphdash*\ref{eq:Intro:StationaryPhaseApproxPsi} are valid for $a \gtrsim 6M$ where $a$ is the orbital separation of the binary system and $a\sim 6M$ is an approximation of the innermost stable circular orbit~\cite{Cutler1994}.
-    Solving eqs.~\ref{eq:Intro:OrbitalEvolution}\Hyphdash*\ref{eq:Intro:FreqEvolution} for $a \sim 6M$ gives $f_{max}\approx c^3 ( 6^{3/2}\pi G M )^{-1}\,\mathrm{Hz}$.
+    Solving Eqs.(\ref{eq:Intro:OrbitalEvolution}\Hyphdash*\ref{eq:Intro:FreqEvolution}) for $a \sim 6M$ gives $f_{max}\approx c^3 ( 6^{3/2}\pi G M )^{-1}\,\mathrm{Hz}$.
     \par
     % The base post-Newtonian expansion parameter is $\sqrt{M/r}$ but it is more convenient to use $\left(\pi M f\right)^{1/3}$ as the post-Newtonian expansion parameter.
     % These two parameters are equal up to and excluding terms of order $(M/r)^{3/2}$.
@@ -476,7 +476,7 @@
     % which has been scaled to a distance of $40\,\Mpc$, the distance of GW170817.
     Most postmerger numerical-relativity simulations last for only tens of milliseconds, though some longer simulations have been performed between 50-100\,ms in length~\cite{Rezzolla2010,Ciolfi2017,Ciolfi2019,DePietri2020}.
     % Rezzolla2010 long early simulation showing conservation of M_adm and J_gw
-    Although Eq.~\ref{eq:Intro:GWAngularMomentumLoss} shows an estimated emission time for gravitational waves of $\sim 150\,$ms, the uncertainty in the equation of state could place $f_2$ as low as $\sim 2.2\,\kHz$ and some simulations show that the ellipticity reduces over time~\cite{Takami2015,Shibata2017a}.
+    Although Eq.(\ref{eq:Intro:GWAngularMomentumLoss}) shows an estimated emission time for gravitational waves of $\sim 150\,$ms, the uncertainty in the equation of state could place $f_2$ as low as $\sim 2.2\,\kHz$ and some simulations show that the ellipticity reduces over time~\cite{Takami2015,Shibata2017a}.
     Given these possibilities, a four-fold decrease in $e$ together with a reduction in $f_2$ to $2.2\,\kHz$ would result in $t_{\mathrm{GW}} \sim 12\,$s.
     
     Although the numerical-relativity simulations do not cover enough time period after the merger, they are vital for extracting the gravitational-wave strain in the early post-merger stage where the amplitude of the strain is at its loudest.
