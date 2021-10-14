@@ -1,19 +1,21 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2513
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
 {\colortbl;\red255\green255\blue255;\red25\green60\blue255;\red251\green0\blue7;\red251\green2\blue7;
 \red0\green0\blue0;\red84\green114\blue192;\red0\green0\blue255;\red251\green2\blue7;\red0\green0\blue255;
 \red84\green114\blue192;\red27\green66\blue117;\red236\green101\blue197;\red134\green78\blue169;\red128\green0\blue128;
-}
+\red153\green102\blue51;\red0\green0\blue0;}
 {\*\expandedcolortbl;;\cssrgb\c12594\c35385\c100000;\cssrgb\c100000\c12195\c0;\cssrgb\c100000\c14913\c0;
 \csgray\c0\c0;\cssrgb\c40000\c53333\c80000;\cssrgb\c1680\c19835\c100000;\cssrgb\c100000\c14913\c0;\cssrgb\c1680\c19835\c100000;
 \cssrgb\c40000\c53333\c80000;\cssrgb\c13333\c33333\c53333;\cssrgb\c94902\c50196\c81569;\cssrgb\c60000\c40000\c72157;\cssrgb\c57919\c12801\c57269;
-}
+\cssrgb\c66800\c47512\c25860;\cssrgb\c0\c0\c0;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww18580\viewh18180\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs34 \cf0 \
+We thank the examiner for their comments and suggestions and have implementented the following changes in response:\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf0 Comments\
+\cf0 \
+Comments\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 ---------------------------------------------------------------------------------------------------------------------------------------------------------\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -46,10 +48,10 @@ Replaced:\
 with \
 \cf7 \cb5 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \strokec6 The equation of state for cold neutron stars ...
-\f1\fs24 \cf6 \cb1 \
+\fs24 \cf6 \cb1 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs34 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 ---------------------------------------------------------------------------------------------------------------------------------------------------------\
+\fs34 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 ---------------------------------------------------------------------------------------------------------------------------------------------------------\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 \'95 (P.8) Discussion on LORENE and COCAL.\
 LORENE is a spectral-methods multi-domain library, there is no \'93LORENE formulation\'94 but some of the methods implemented there are based on a certain formulation of Einstein equations for the initial data problem. Similar comment for COCAL.\
@@ -84,16 +86,16 @@ Numerical instabilities of ADM follows from weak hyperbolicity properties when u
 \pard\pardeftab720\sl360\partightenfactor0
 \cf8 \cb5 \expnd0\expndtw0\kerning0
 Unfortunately, ADM numerical simulations were found to be unstable to accumulated errors over the simulation time~\\cite\{Brandt2000,Kidder2001,Alcubierre2001a\} and a number of different formulations were developed to improve this. 
-\f1\fs24 \cf8 \cb1 \
+\fs24 \cf8 \cb1 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs34 \cf0 \kerning1\expnd0\expndtw0 With:
-\f1\fs24 \cf8 \expnd0\expndtw0\kerning0
+\fs34 \cf0 \kerning1\expnd0\expndtw0 With:
+\fs24 \cf8 \expnd0\expndtw0\kerning0
 \
 \pard\pardeftab720\sl360\partightenfactor0
 
-\f0\fs34 \cf9 \cb5 Unfortunately, as ADM numerical simulations were weakly hyperbolic in some guages, errors were found to accumulate over the simulation time~\\cite\{Brandt2000,Kidder2001,Alcubierre2001a\}.\
+\fs34 \cf9 \cb5 Unfortunately, as ADM numerical simulations were weakly hyperbolic in some guages, errors were found to accumulate over the simulation time~\\cite\{Brandt2000,Kidder2001,Alcubierre2001a\}.\
 To counter this, a number of different formulations were devised to improve this. \cf0 \cb1 \kerning1\expnd0\expndtw0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 ---------------------------------------------------------------------------------------------------------------------------------------------------------\
@@ -151,7 +153,7 @@ The definition of HMNS and SMNS refer to cold (T=0) equilibra and do not strictl
 \cf7 We incorporated this uncertainty in our definitions on page nine by using approximate values for the mass thresholds in the definitions of HMNS and SMNS. The effects of winds, thernal effects, neutrino luminosity, etc., will alter the mass thresholds but the definitions of HMNS and SMNS are still approapriate.\
 \
 \cf14 Comment to PL:\
-Bernuzzi's comment: Some differentially-rotating HMNS may potentially be long lived whereas some rigidly rotating SMNS may be short lived. I haven't really addressed this\
+Bernuzzi's comment: Some differentially-rotating HMNS may potentially be long lived whereas some rigidly rotating SMNS may be short lived. I haven't really addressed this.\
 \cf0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 ---------------------------------------------------------------------------------------------------------------------------------------------------------\
@@ -176,16 +178,29 @@ Added:\
 \
 \'95 (P.55) \'93. . . will inform extremely dense, hot equation of state . . . \'94\
 This is a common statement in the community but requires specification. To the best of my knowledge, there is no known method to extract genuinely new information about the hot EOS at postmerger densities. For example, constraints on the tidal coupling constant clearly refer to the cold \'91maximum\'92 density rho~ 1-2 rho_nuc of the neutron star in the binary, not to postmerger densities. Refs. Bauswein:2014qla, Breschi:2019srl discuss the possibility of constraining the minimum TOV radius but are still limited to cold EOS and in accuracy (even for loud postmerger signals). It would be interesting to expand a little on this point and include the Author\'92s view on future developments in this direction.\
-\cf7 \
-Modelling the relationship between the hot equation of state and future detection of post-merger gravitational wave signals is a subject for much future work.\
-One potential way to do this is as follows.\
-The first stage involves reducing the extensive data generated from one numerical-relativity simulation to something more managable.\
-As an example, we could calculate time variying rotation profiles, $\\Omega(z,t)$, density profiles, $\\rho(r,t)$, ellipticitiy, $\\epsilon(t)$, and \cf9 temperature profiles $T(r,t)$.\cf7 \
+\
+\
+This is the paragraph that Seb is talking about:\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf15 \expnd0\expndtw0\kerning0
+Observations of gravitational waves from the late inspiral will inform the equation of state for cold neutron stars, whereas gravitational wave detections from surviving post-merger remnants will inform the extremely dense, hot equa- tion of state. Surviving post-merger remnants are binary neutron star remnants that have not yet collapsed to a black hole. We need models of the post-merger gravitational-wave strain to enable observations of gravitational waves from post-merger remnants. Numerical-relativity simulations are the best basis for these post-merger models. 
+\fs24 \cf16 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs34 \cf0 \kerning1\expnd0\expndtw0 \
+\
+\cf16 These are my thoughts on this (not presently added, wanted to discuss with PL first):\cf7 \
+\cf14 Modelling the relationship between the hot equation of state and future detection of post-merger gravitational wave signals is a subject for much future work.\
+One potential way to do this, premised on a very loud future post-merger detection, is as follows.\
+The first stage involves reducing the amount of data generated from numerical-relativity simulations to something more managable.\
+As an example, we could extract time variying rotation profiles, $\\Omega(z,t)$, density profiles, $\\rho(r,t)$, ellipticitiy, $\\epsilon(t)$, and temperature profiles $T(r,t)$ from the numerical-relativity simulations.\
 The first three variables would be sufficient to generate a gravitational-wave strain.\
 With this simplification, it may then be possible to investigate the change in these variables that occur due to equation of state parameters and other physics.\
-For instance, a numerical-relativity simulation that incorporates neutrino physics could investigate the change in the above variables due to a change in the neutrino cross section and similarly for changes of polytropic indices and so on.\
+For instance, a numerical-relativity simulation that incorporates neutrino physics could investigate the change in the above variables due to a change in the neutrino cross section and similarly for changes to the polytropic indices, bulk viscosity, and so on.\
 \
-\
+\cf7 \
 \cf0 \
 \
 }
