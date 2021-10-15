@@ -1,2 +1,3 @@
-# Binary Neutron Star Remnants: the most extreme matter in the Universe
+# Binary Neutron Star Remnants: 
+# the most extreme matter in the Universe
 Binary neutron star post-merger remnants consist of the most extreme matter in the Universe, being extremely dense and hot. We expect to be able to measure gravitational waves from these remnants in the near future. However, we need waveforms of the gravitational waves to be able to detect remnants. Simulations can generate these waveforms, but they are much too slow for use in detections. We develop methods to produce these waveforms significantly faster and use these methods to measure how far away a remnant needs to be to estimate when it will collapse into a black hole.
